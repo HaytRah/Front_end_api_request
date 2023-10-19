@@ -29,17 +29,17 @@
             <div class="accordion-body">
                 <!-- Form component from bootstrap for the login form -->
                 <form class="form_login" method="POST">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <button id="login" type="submit" class="btn btn-primary">Login</button>
+                </form>
             </div>
           </div>
         </div>
@@ -53,32 +53,37 @@
             <div class="accordion-body">
                 <!-- form component from bootstrap for the register form -->
                 <form class="form_register" method="POST">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text">Full name</span>
-                        <input placeholder="First name" name="first_name" type="text" aria-label="First name" class="form-control">
-                        <input placeholder="First name" name="last_name" type="text" aria-label="Last name" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-text">Full name</span>
+                      <input placeholder="First name" name="first_name" type="text" aria-label="First name" class="form-control">
+                      <input placeholder="First name" name="last_name" type="text" aria-label="Last name" class="form-control">
+                  </div>
+                  <button id="register" type="submit" class="btn btn-primary">Register</button>
+                </form>
             </div>
           </div>
         </div>
       </div>
-      <!-- Test buttons to ensure that the form communicates with the API correctly -->
-      <form action="http://localhost:3000/api" method="GET">
-        <button type="submit" id="Verify" class="btn btn-primary">Verify API</button>
-      </form>
-      <form action="http://localhost:3000/api/users" method="GET">
-        <button type="submit" id="Verify" class="btn btn-primary">Receive users</button>
-      </form>
+
+      <!-- Toast that will display the resolution message if there is one -->
+      <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+        <div id="live_toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex" id="toast">
+            <div class="toast-body" id="toast_message">
+
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
 </body>
 <script src="script.js"></script>
 </html>
