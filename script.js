@@ -55,7 +55,7 @@ form_login.addEventListener('submit', event => {
 // Function of the query to the API
 const fetch_request = async(adress, method, user_object) => {
     await sleep(1.5);
-    fetch(adress, {
+    await fetch(adress, {
         method: method,
         headers: {
             'Content-Type': 'application/json'
@@ -66,16 +66,15 @@ const fetch_request = async(adress, method, user_object) => {
     .then(res => { 
             console.log(res);
             toast_model(res);
+            toastBootstrap.show()
         });
-
-    toastBootstrap.show()
 }
 
 // Function that will serve as the skeletton for a toast
 const toast_model = (res) => {
     if (res.type == "Success") {
-        document.getElementById('toast_message').style.backgroundColor = "#6EA8FE";
-        document.getElementById('toast').style.backgroundColor = "#6EA8FE";
+        document.getElementById('toast_message').style.backgroundColor = "#0B5ED7";
+        document.getElementById('toast').style.backgroundColor = "#0B5ED7";
     } else {
         document.getElementById('toast_message').style.backgroundColor = "#DC3545";
         document.getElementById('toast').style.backgroundColor = "#DC3545";
